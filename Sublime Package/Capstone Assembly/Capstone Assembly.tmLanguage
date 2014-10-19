@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- --------------------------- Syntax info --------------------------- -->
+	<key>uuid</key> <!-- TODO: Generate unique UUID -->
+	<string>26251B18-6B1D-11D9-AFDB-AABBAABBAABA</string>
+
+	<key>name</key>
+	<string>Capstone Assembly</string>
+	
+	<key>scopeName</key>
+	<string>source.capstone-assembly</string>
+
+	<key>fileTypes</key>
+	<array>
+		<string>asm</string>
+	</array>
+
+	<!-- --------------------------- Syntax patterns --------------------------- -->
+	<key>patterns</key>
+	<array>
+
+		<!-- Byte declaration -->
+		<dict>
+			<key>begin</key>
+			<string>\s*(\w+)\s+\.(BYT)\s+('.+')\s*$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>string.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>source.capstone-assembly</string>
+		</dict>
+
+		<!-- int declaration -->
+		<dict>
+			<key>begin</key>
+			<string>(\w+)\s+\.(INT)\s+([+-]?\d+(?:\s*,\s*[+-]?\d+)*)\s*$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>source.capstone-assembly</string>
+		</dict>
+
+		<!-- Instructions -->
+		<!-- The primary difference between all of these pattern groups are that the input signature differs. -->
+
+		<dict>
+			<key>begin</key>
+			<string>(?:(\w+)\s+)?\s*(JMP)\s+(\w+)\s*$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>(?:(\w+)\s+)?\s*(JMR)\s+(R\w)\s*$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB)\s+(R\d|PC)\s*,\s*(\w+)\s*$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.capstone-assembly</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>(?:(\w+)\s+)?\s*(MOV|ADD|SUB|MUL|DIV|AND|OR|CMP)\s+(R\d|PC)\s*,\s*(R\d|PC)\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.capstone-assembly</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>(?:(\w+)\s+)?\s*(ADI)\s+(R\d)\s*,\s*(\d+)\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.capstone-assembly</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>source.capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>(?:(\w+)\s+)?\s*(TRP)\s+(\d+)\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.capstone-assembly</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<!-- space lines -->
+		<dict>
+			<key>begin</key>
+			<string>^\s+$</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>source.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<!-- Comments -->
+		<dict>
+			<key>begin</key>
+			<string>;</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>comment.block.capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>match</key>
+			<string>;.+</string>
+			<key>name</key>
+			<string>punctuation.definition.comment.capstone-assembly</string>
+		</dict>
+
+		<!-- Everything else (not valid) -->
+		<dict>
+			<key>match</key>
+			<string>.*</string>
+			<key>name</key>
+			<string>invalid.capstone-assembly</string>
+		</dict>
+	</array>
+</dict>
+</plist>
