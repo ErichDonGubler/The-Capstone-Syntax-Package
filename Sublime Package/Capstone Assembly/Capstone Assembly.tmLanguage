@@ -20,11 +20,28 @@
 	<!-- --------------------------- Syntax patterns --------------------------- -->
 	<key>patterns</key>
 	<array>
+		<!-- Comments -->
+		<dict>
+			<key>begin</key>
+			<string>\s*;.*</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.capstone-assembly</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>comment.block.capstone-assembly</string>
+		</dict>
 
 		<!-- Byte declaration -->
 		<dict>
 			<key>begin</key>
-			<string>\s*(\w+)\s+\.(BYT)\s+('.+')\s*$</string>
+			<string>^(\w+)\s+\.(BYT)\s+('.+')\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -42,6 +59,11 @@
 					<key>name</key>
 					<string>string.capstone-assembly</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string></string>
@@ -52,7 +74,7 @@
 		<!-- int declaration -->
 		<dict>
 			<key>begin</key>
-			<string>(\w+)\s+\.(INT)\s+([+-]?\d+(?:\s*,\s*[+-]?\d+)*)\s*$</string>
+			<string>^(\w+)\s+\.(INT)\s+([+-]?\d+(?:\s*,\s*[+-]?\d+)*)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -70,6 +92,11 @@
 					<key>name</key>
 					<string>constant.numeric.capstone-assembly</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string></string>
@@ -82,7 +109,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>(?:(\w+)\s+)?\s*(JMP)\s+(\w+)\s*$</string>
+			<string>^(?:(\w+)\s+)?\s*(JMP)\s+(\w+)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -93,12 +120,17 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.capstone-assembly</string>
+					<string>keyword.source.capstone-assembly</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>variable.source.capstone-assembly</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -109,7 +141,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>(?:(\w+)\s+)?\s*(JMR)\s+(R\w)\s*$</string>
+			<string>^(?:(\w+)\s+)?\s*(JMR)\s+(R\w)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -120,13 +152,18 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.capstone-assembly</string>
+					<string>keyword.source.capstone-assembly</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.source.capstone-assembly</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string></string>
@@ -136,7 +173,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB)\s+(R\d|PC)\s*,\s*(\w+)\s*$</string>
+			<string>^(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB)\s+(R\d|PC)\s*,\s*(\w+)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -147,7 +184,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.capstone-assembly</string>
+					<string>keyword.source.capstone-assembly</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -159,6 +196,11 @@
 					<key>name</key>
 					<string>variable.source.capstone-assembly</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string></string>
@@ -168,7 +210,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>(?:(\w+)\s+)?\s*(MOV|ADD|SUB|MUL|DIV|AND|OR|CMP)\s+(R\d|PC)\s*,\s*(R\d|PC)\s*</string>
+			<string>^(?:(\w+)\s+)?\s*(MOV|ADD|SUB|MUL|DIV|AND|OR|CMP)\s+(R\d|PC)\s*,\s*(R\d|PC)\s*(;.*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -179,7 +221,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.capstone-assembly</string>
+					<string>keyword.source.capstone-assembly</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -191,6 +233,11 @@
 					<key>name</key>
 					<string>keyword.source.capstone-assembly</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string></string>
@@ -200,7 +247,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>(?:(\w+)\s+)?\s*(ADI)\s+(R\d)\s*,\s*(\d+)\s*</string>
+			<string>^(?:(\w+)\s+)?\s*(ADI)\s+(R\d)\s*,\s*(\d+)\s*(;.*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -211,7 +258,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.capstone-assembly</string>
+					<string>keyword.source.capstone-assembly</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -222,6 +269,11 @@
 				<dict>
 					<key>name</key>
 					<string>constant.numeric.capstone-assembly</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -232,7 +284,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>(?:(\w+)\s+)?\s*(TRP)\s+(\d+)\s*</string>
+			<string>^(?:(\w+)\s+)?\s*(TRP)\s+(\d+)\s*(;.*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -243,12 +295,17 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.capstone-assembly</string>
+					<string>keyword.source.capstone-assembly</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>constant.numeric.capstone-assembly</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.capstone-assembly</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -273,31 +330,6 @@
 			<string>$</string>
 			<key>name</key>
 			<string>capstone-assembly</string>
-		</dict>
-
-		<!-- Comments -->
-		<dict>
-			<key>begin</key>
-			<string>;</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.capstone-assembly</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>$</string>
-			<key>name</key>
-			<string>comment.block.capstone-assembly</string>
-		</dict>
-
-		<dict>
-			<key>match</key>
-			<string>;.+</string>
-			<key>name</key>
-			<string>punctuation.definition.comment.capstone-assembly</string>
 		</dict>
 
 		<!-- Everything else (not valid) -->
