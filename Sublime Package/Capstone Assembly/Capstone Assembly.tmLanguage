@@ -173,7 +173,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>^(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB)\s+(R\d+|(R\d+|PC|SL|SP|FP|SB))\s*,\s*(\w+)\s*(;.*)?$</string>
+			<string>^(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB)\s+(R\d+|PC|SL|SP|FP|SB)\s*,\s*(\w+)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -210,7 +210,7 @@
 
 		<dict>
 			<key>begin</key>
-			<string>^(?:(\w+)\s+)?\s*(MOV|ADD|SUB|MUL|DIV|AND|OR|CMP)\s+(R\d+|(R\d+|PC|SL|SP|FP|SB))\s*,\s*(R\d+|(R\d+|PC|SL|SP|FP|SB))\s*(;.*)?</string>
+			<string>^(?:(\w+)\s+)?\s*(MOV|ADD|SUB|MUL|DIV|AND|OR|CMP)\s+(R\d+|PC|SL|SP|FP|SB)\s*,\s*(R\d+|PC|SL|SP|FP|SB)\s*(;.*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
