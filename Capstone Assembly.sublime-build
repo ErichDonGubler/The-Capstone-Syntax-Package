@@ -1,0 +1,6 @@
+{
+	"working_dir": "$file_path",
+	"cmd": ["vm.exe", "$file"],
+	"shell": true,
+	"selector": "source.capstone-assembly"
+}
