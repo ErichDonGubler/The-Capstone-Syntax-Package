@@ -23,19 +23,19 @@
 		<!-- Comments -->
 		<dict>
 			<key>begin</key>
-			<string>\s*;.*</string>
+			<string>^\s*;.*$</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>$</string>
 			<key>name</key>
-			<string>comment.block.capstone-assembly</string>
+			<string>comment.line</string>
 		</dict>
 
 		<!-- Byte declaration -->
@@ -47,22 +47,22 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.capstone-assembly</string>
+					<string>storage.type</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>string.capstone-assembly</string>
+					<string>string.quoted.single</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -80,22 +80,22 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.capstone-assembly</string>
+					<string>storage.type</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>constant.numeric.capstone-assembly</string>
+					<string>constant.numeric</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -109,28 +109,55 @@
 
 		<dict>
 			<key>begin</key>
-			<string>^(?:(\w+)\s+)?\s*(JMP)\s+(\w+)\s*(;.*)?$</string>
+			<string>^(?:(\w+)\s+)?\s*(END|BLK)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>keyword.other</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>comment.line</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string></string>
+			<key>name</key>
+			<string>capstone-assembly</string>
+		</dict>
+
+		<dict>
+			<key>begin</key>
+			<string>^(?:(\w+)\s+)?\s*(JMP|LCK|ULK)\s+(\w+)\s*(;.*)?$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.label</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -147,22 +174,22 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>keyword.other</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>variable.language</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -173,33 +200,33 @@
 
 		<dict>
 			<key>begin</key>
-			<string>^(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB)\s+(R\d+|PC|SL|SP|FP|SB)\s*,\s*(\w+)\s*(;.*)?$</string>
+			<string>^(?:(\w+)\s+)?\s*(BNZ|BGT|BLT|BRZ|LDA|STR|LDR|STB|LDB|RUN)\s+(R\d+|PC|SL|SP|FP|SB)\s*,\s*(\w+)\s*(;.*)?$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>keyword.other</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>variable.language</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>variable.other</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -216,27 +243,27 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>keyword.other</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>variable.language</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>variable.language</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -253,27 +280,27 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>keyword.other</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>variable.language</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>constant.numeric.capstone-assembly</string>
+					<string>constant.numeric</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -290,22 +317,22 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.source.capstone-assembly</string>
+					<string>entity.label</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.source.capstone-assembly</string>
+					<string>keyword.other</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>constant.numeric.capstone-assembly</string>
+					<string>constant.numeric</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.capstone-assembly</string>
+					<string>comment.line</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -337,7 +364,7 @@
 			<key>match</key>
 			<string>.*</string>
 			<key>name</key>
-			<string>invalid.capstone-assembly</string>
+			<string>invalid.illegal</string>
 		</dict>
 	</array>
 </dict>
