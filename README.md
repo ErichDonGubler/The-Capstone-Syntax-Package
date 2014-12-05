@@ -1,5 +1,7 @@
 #The-Capstone-Syntax-Package
 
+![Screenshot of this package's highlighting with Monokai Extended](screenshot.png)
+
 This is a Sublime Text package containing a build system and syntax specification for use with UVU's CS-concentration capstone project. This includes:
 
 * CS 4380 (High Performance Computer Architecture)
