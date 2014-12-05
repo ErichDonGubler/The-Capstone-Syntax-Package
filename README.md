@@ -1,17 +1,15 @@
 #The-Capstone-Syntax-Package
 
-Syntax highlighting plugins/build systems for various editors for use with UVU's CS-concentration capstone project.
+This is a Sublime Text package containing a build system and syntax specification for use with UVU's CS-concentration capstone project. This includes:
 
-##High-Level Specification
+* CS 4380 (High Performance Computer Architecture)
+* CS 4490 (Compiler Construction)
+* CS 4510 (Operating System Design and Simulation)
 
-TODO: Finish me!
-
-##Implementations of the Syntax Package
-
-The following implementations exist currently:
-
-* Sublime Text 2/3
-
-##Contributors
+#Contributors
 
 * Erich Gubler (@ErichDonGubler), creator.
+
+##See also
+If you are interested in using capstone syntax highlighting in other editors, you might be interested in:
+* [Atom capstone assembly package](https://github.com/MCluck90/language-uvu-asm) written by @mcluck90
