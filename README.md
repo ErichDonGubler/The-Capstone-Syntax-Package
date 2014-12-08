@@ -8,6 +8,15 @@ This is a Sublime Text package containing a build system and syntax specificatio
 * CS 4490 (Compiler Construction)
 * CS 4510 (Operating System Design and Simulation)
 
+
+##Installation
+
+The simplest way is to start from Sublime:
+
+1. Click ```Menu``` > ```Preferences``` > ```Browse Packages...```
+2. Create a new directory - this will be the package name.
+3. Clone/paste the contents of this repo into the new directory.
+
 #Contributors
 
 * Erich Gubler (@ErichDonGubler), creator.
