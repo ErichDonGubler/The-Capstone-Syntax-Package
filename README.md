@@ -1,4 +1,4 @@
-#The-Capstone-Syntax-Package
+# The-Capstone-Syntax-Package
 
 ![Screenshot of this package's highlighting with Monokai Extended](screenshot.png)
 
@@ -9,18 +9,14 @@ This is a Sublime Text package containing a build system and syntax specificatio
 * CS 4510 (Operating System Design and Simulation)
 
 
-##Installation
+## Installation
 
-The simplest way is to start from Sublime:
+Clone this repo from Git into your Sublime package directory (`Preferences` > `Browse Packages...`).
 
-1. Click ```Menu``` > ```Preferences``` > ```Browse Packages...```
-2. Create a new directory - this will be the package name.
-3. Clone/paste the contents of this repo into the new directory.
-
-#Contributors
+# Contributors
 
 * Erich Gubler (@ErichDonGubler), creator.
 
-##See also
+## See also
 If you are interested in using capstone syntax highlighting in other editors, you might be interested in:
-* [Atom capstone assembly package](https://github.com/MCluck90/language-uvu-asm) written by @mcluck90
+* [Atom](https://github.com/MCluck90/language-uvu-asm) written by @mcluck90
