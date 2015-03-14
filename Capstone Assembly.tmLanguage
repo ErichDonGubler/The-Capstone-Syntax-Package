@@ -47,7 +47,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -80,7 +80,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -115,12 +115,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -142,12 +142,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -174,12 +174,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -206,12 +206,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -243,12 +243,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -280,12 +280,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -317,12 +317,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.label</string>
+					<string>entity.name.function</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other</string>
+					<string>support.function</string>
 				</dict>
 				<key>3</key>
 				<dict>
