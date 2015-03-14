@@ -1,0 +1,6 @@
+stuff	.BYT	'stuff'
+three	.INT	3
+MAIN	RUN	R1,MAIN_AFTER
+
+MAIN_AFTER	TRP 99
+		TRP 100
